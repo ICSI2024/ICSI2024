@@ -12,8 +12,115 @@
     <link type="text/css" href="../assets/css/theme.css" rel="stylesheet">
     <!-- Demo CSS - No need to use these in your project -->
     <link type="text/css" href="../assets/css/demo.css" rel="stylesheet">
+    
+    <style>
+    #popup{ 
+
+      border: 2px solid #ffbdbd;
+      position: fixed;
+      top:40%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      width: 800px;
+      padding: 100px;
+      box-shadow:8 5px 30px rgba(35, 107, 251, 0.3);
+      background-color: rgb(255, 255, 255);
+      display: none; /* 默认隐藏 */
+    }
+    .openBtn {
+        border: 2px solid #000000;
+        color: #3d3d3d;
+        float: center;
+        cursor: pointer;
+       background:#bddeff; 
+        padding: 15px 0px;
+        text-align:center;
+        display: block;
+        font-size: 18px;
+        line-height: 17px;
+        margin: 0 auto;
+        margin-top: 12px;
+        border-radius: 8px;
+        width: 15%;
+        box-shadow:8 5px 10px rgba(153, 174, 252, 0.3);
+      }
+
+      .openBtn:hover{
+        color: #ffffff;
+      }
+    .closeBtn {
+        float: center;
+        font-weight: bold;
+        cursor: pointer;
+       background:#ffa1a9; 
+        padding: 15px 0px;
+        text-align:center;
+        display: block;
+        font-size: 18px;
+        line-height: 17px;
+        margin: 0 auto;
+        margin-top: 45px;
+        border-radius: 10px;
+        width: 30%;
+        box-shadow:8 5px 10px rgba(255, 65, 122, 0.3);
+
+      }
+      .closeBtn:hover,.closeBtn:focus {
+        background-color: #f40545;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .closeBtn:active {
+        background-color: #d40524;
+      }
+      .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(82, 114, 146, 0.1);
+        display:none; /* 默认隐藏 */
+        z-index: 500;
+      }
+      .modalBackdrop.active{
+        filter: blur(5px);
+      }
+    </style>
+    <script >
+
+      function togglePopup() {
+        var popup = document.getElementById("popup");
+        var backdrop = document.getElementById("modal-backdrop");
+
+        if (popup.style.display === "none" || popup.style.display === "") {
+          popup.style.display = "block";
+          backdrop.classList.add("modal-open");
+        } else {
+          popup.style.display = "none";
+        }
+      }
+
+      // 点击窗口外部隐藏提示窗
+      window.onclick = function(event) {
+        var popup = document.getElementById("popup");
+        var backdrop = document.getElementById("modalBackdrop");
+        var body = document.body;
+
+        if (event.target === backdrop) {
+          popup.style.display = "none";
+          backdrop.style.display = "none";
+          body.classList.remove("modal-open");
+        }
+      }
+
+
+    </script>
   </head>
+
   <body>
+
+    <script src="script.js"></script>
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-4">
         <div class="container">
             <h1 class="text-white" >ICSI 2024</h1>
@@ -55,13 +162,12 @@
           </div>
         </div>
       </nav>
-      <main class="main">
+      <main class="main" >
         <!-- <section class="spotlight parallax bg-cover background-size:100%,5%" style="background-image: url('assets/images/backgrounds/img-1.jpg')">
           <span class="mask bg-primary alpha-7"></span>
           <div class="spotlight-holder py-lg-lg">
           </div>
-        </section>  -->
-
+        </section>  --> 
         <section class="slice slice-lg bg-tertiary bg-cover bg-size--contain" style="background-image: url('../assets/images/backgrounds/img-1.png'); background-position: center 10%;">
             <span class="mask bg-primary alpha-7"></span>
             <div class="container text-center">
@@ -78,18 +184,67 @@
                 </div>
               </div>
             </div>
-          </section>
+      </section>
   
-      <section class=" ">
+      <section class=" "> 
+        <div >
+          <div style=" float: center; font-size:18px;margin-top: 45px;text-align: left; padding: 50px 30%;">
+            <p style="font-size: 22px;"><strong>About Registration</strong></p>
+            <p>The registration fee is divided into two categories: employees and students:</p>
+            <ul type="disc">
+              <li>The registration fee for employees is RMB 1,200 before August 9 and RMB 1,500 after August 9 and on-site registration;</li>
+              
+              <li>Student registration fee is RMB 800 for registration before August 9, and RMB 1,000 for on-site registration after August 9;</li>
+              <li>To enjoy the discounted registration fee, students must be full-time students at the time of registration and will be required to present their student ID cards for on-site registration.</li>
+              <li>Post-doctoral fellows, laboratory technicians, etc. are not included in the student category.</li>
+            </ul>
+
+            <p style="font-size: 22px;"><br><strong>About the registration fee invoice</strong></p>
+            <p>The conference can issue Beijing VAT ordinary/special invoice (electronic):</p>
+            <ul type="disc">
+              <li>Attendees are requested to fill in the unit name, taxpayer identification number and e-mail address correctly, as invoices will not be refunded or exchanged; </li>
+              <li>Please keep your cell phone and email address free for timely contact;</li>
+              <li>Registration fee invoices will be issued in the order of payment in the month of the conference and the following month and sent to the e-mail address.</li>
+            </ul>
+
+            <p style="font-size: 22px;"><br><strong>Cancellation and Refund Policy</strong></p>
+            <p>If you are unable to attend for any reason, please call 15010258570 for a full refund.</p>
+
+
+            <p style="font-size: 20px;"><br><strong>About Hotel Reservation</strong></p>
+            <p>The conference can issue Beijing VAT ordinary/special invoice (electronic):</p>
+            <p>The designated hotel for this conference is Huangshan Parkview International Hotel:</p>
+            <ul type="disc">
+              <li>Please make sure you register successfully before booking your hotel;</li>
+              <li>To book a room, please use WeChat to scan the QR code on the bottom, room booking support 7 days in advance to cancel.</li>
+            </ul>
+            <p>Hotel contact: Mr. Cui 13855971009</p>
+            <p>Registration contact: Ms. Liu 15010258570</p>
+          </div>
+
+          <div style="text-align: center;"> <img src="../assets/images/1.png"  style="margin: 0px auto;"></div>
+          <button  class="openBtn" onclick="togglePopup()">REGISTER</button>
+          <!-- <a href="https://s.jdzd.cn/d5D33e" class="openBtn" style="margin-top: 29px;" >HOTEL BOOKING</a> -->
+
+        </div>
+
+
+
+
+
+\
+        <div id="popup">
+          <!-- <span class="closeBtn" onclick="togglePopup()">&times;</span> -->
+          <h1 style="text-align:left;color:#3d3d3d; font-size: 25px;">Registration Notes:</h1>
+          <p style="text-align:left;color:#ac3f3f; margin-top: 40px;border-radius: 32px; font-size: 20px;">
+            Please read our registration, invoicing, hotel booking and refund policies carefully to ensure you are aware of all rules before registering. 
+            By clicking the confirmation button and registering you will be deemed to have agreed to our full registration terms.
+            Please do not hesitate to contact us if you have any further questions.
+          </p>
+          <a href="https://www.bagevent.com/widget/ticket/8882094" class="closeBtn" onclick="togglePopup()" style="color: azure;" >CONFIRM</a>
+        </div>
           <div class="container">
-            
-            <div class="row align-items-center mb-4 mt-lg">
-                <h2 class="heading h3 mb-0" >Register for your participation
-                </h2>
-            </div>
-            <p style="font-size:18px;">
-                To be announced. 
-            </p>
+
               <!-- <p class="mb-5">Useful modifier classes and options were added to make typography look beautiful. We chose the <strong>Nunito</strong> typeface for this UI Kit. Easy to read, it looks great in every scenario with a little bit of roundness to make it even more gorgeous.</p> -->
               <div class="row-wrapper">
                 <div class="row cols-xs-space cols-sm-space cols-md-space">
@@ -102,9 +257,11 @@
                     </p>
                     
                   </div>
-                </div>
+                </div>      
+                
         </section>
   
+
       </main>
       <footer class="pt-5 pb-3 footer  footer-dark bg-tertiary">
         <div class="container">
