@@ -86,6 +86,11 @@
       .modalBackdrop.active{
         filter: blur(5px);
       }
+
+      .container1 {
+        justify-content: flex-start;
+      }
+
     </style>
     <script >
 
@@ -186,16 +191,16 @@
             </div>
       </section>
   
-      <section class=" "> 
-        <div >
-          <div style=" float: center; font-size:18px;margin-top: 45px;text-align: left; padding: 50px 30%;">
+      <section > 
+        <div>
+        <div class=".container1">
+          
+          <div class="left" style=" display:block;  width:50%; padding: 100px; position:absolute; left:0px;">
             <p style="font-size: 22px;"><strong>About Registration</strong></p>
             <p>The registration fee is divided into two categories: student and non-student:</p>
             <ul type="disc">
               <li>Non-student registration fee is RMB 1,200 before August 9 and RMB 1,500 after August 9 and on-site registration;</li>
-              
               <li>Student registration fee is RMB 800 for registration before August 9, and RMB 1,000 for on-site registration after August 9. Students must be full-time students at the time of registration and will be required to present their student ID cards for on-site registration;</li>
-      
               <li>Post-doctoral fellows, laboratory technicians, etc. are not included in the student category.</li>
             </ul>
 
@@ -210,9 +215,7 @@
             <p style="font-size: 22px;"><br><strong>Cancellation and Refund Policy</strong></p>
             <p>If you are unable to attend for any reason, please call 15010258570 for a full refund of your registration fee before the conference.</p>
 
-
             <p style="font-size: 22px;"><br><strong>About Hotel Reservation</strong></p>
-            
             <p>You are free to book any hotel at Huang Shan City after your succssfuly registation. If you are to book Huangshan Parkview International Hotel, where the conference is to hold:</p>
             <ul type="disc">
               <li>Please make sure you register successfully before booking your hotel;</li>
@@ -222,19 +225,13 @@
             <p>Registration contact: Ms. Liu 15010258570</p>
           </div>
 
-          
 
-
-        </div>
-        <div >
-          <div style=" float: center; font-size:18px;margin-top: 45px;text-align: left; padding: 50px 30%;">
+          <div  class="right" style=" display:block; width:50%; height: 1400px; padding: 100px;position:absolute; left:50%; ">
             <p style="font-size: 22px;"><strong>注册须知</strong></p>
             <p>注册类型分为两类:学生与非学生类型:</p>
             <ul type="disc">
               <li>非学生报名费在 8 月 9 日之前为人民币 1,200 元，8 月 9 日之后为人民币 1,500 元，现场报名费为人民币 1,500 元；</li>
-              
               <li>8 月 9 日之前的学生注册费为 800 元人民币，8 月 9 日之后以及现场注册的学生注册费为 1000 元人民币。按照学生价格注册的必须为全日制在校学生，会议现场签到时需出示学生证；</li>
-      
               <li>博士后研究员、实验室技术人员等不包括在学生类别中。</li>
             </ul>
 
@@ -249,7 +246,6 @@
             <p style="font-size: 22px;"><br><strong>取消和退款规则</strong></p>
             <p>如果您因故不能参加会议，请在会前致电 15010258570 申请全额退还注册费。</p>
 
-
             <p style="font-size: 22px;"><br><strong>酒店预订</strong></p>
             <p>注册成功后，您可以自由预订黄山市的任何一家酒店。如果您要预订会议举办地黄山栢景国际大酒店:</p>
             <ul type="disc">
@@ -259,8 +255,9 @@
             <p>酒店联系方式: 崔先生 13855971009</p>
             <p>注册问题咨询: 刘先生 15010258570</p>
           </div>
-
-          <div style="text-align: center;"> <img src="../assets/images/1.png"  style="margin: 0px auto;"></div>
+        </div>
+        <div style="position:absolute; left:0px; right: 0px; top: 1100px;  bottom: 500px;">
+          <div style="text-align: center; "> <img src="../assets/images/1.png"  style="margin: 0px auto;"></div>
           <button  class="openBtn" onclick="togglePopup()">REGISTER</button>
           <!-- <a href="https://s.jdzd.cn/d5D33e" class="openBtn" style="margin-top: 29px;" >HOTEL BOOKING</a> -->
 
@@ -270,8 +267,8 @@
 
 
 
-\
-        <div id="popup">
+
+        <div id="popup" >
           <!-- <span class="closeBtn" onclick="togglePopup()">&times;</span> -->
           <h1 style="text-align:left;color:#3d3d3d; font-size: 25px;">Registration Notes:</h1>
           <p style="text-align:left;color:#ac3f3f; margin-top: 40px;border-radius: 32px; font-size: 20px;">
