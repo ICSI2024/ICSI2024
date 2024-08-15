@@ -12,6 +12,13 @@
     <link type="text/css" href="../assets/css/theme.css" rel="stylesheet">
     <!-- Demo CSS - No need to use these in your project -->
     <link type="text/css" href="../assets/css/demo.css" rel="stylesheet">
+    <style>
+      #downloadXlsx:hover {
+        color: blue; /* 鼠标悬停时文字颜色变为蓝色 */
+        text-decoration: underline; /* 鼠标悬停时文字下划线 */
+        cursor: pointer; /* 鼠标悬停时鼠标箭头变手指 */
+    }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-4">
@@ -104,7 +111,12 @@
 
 	 <div class="row align-items-center mb-4" style="margin-top: 0rem;">
 
-                 
+     
+    <div style="width: 100%;height: 40px;margin: 50px auto;">
+      <a id="downloadXlsx" style="width: 100%;font-size: 30px; text-align: center;"> please click on this to download the attendee brochure</a>
+    </div>
+
+
 <div class="col-5">
                   <h2 class="heading h3 mb-0">Transportation</h2>
                 </div>
@@ -224,5 +236,23 @@
     <script src="../assets/vendor/textarea-autosize/textarea-autosize.min.js"></script>
     <!-- Theme JS -->
     <script src="../assets/js/theme.js"></script>
+
+    <script>
+      // 添加事件监听器，当按钮被点击时执行下载操作
+      document.getElementById("downloadXlsx").addEventListener("click", function () {
+          const xlsxUrl = 'routine.xlsx';  // 实际的 XLSX 文件路径
+          // 创建一个隐藏的链接元素
+          const link = document.createElement('a');
+          link.href = xlsxUrl;
+          // 指定下载文件的文件名
+          link.download = '会议日程.xlsx';  
+          // 将链接添加到文档中（隐藏状态）
+          document.body.appendChild(link);
+          // 触发下载
+          link.click();
+          // 下载完成后从文档中移除链接
+          document.body.removeChild(link);
+      });
+  </script>
   </body>
 </html>
